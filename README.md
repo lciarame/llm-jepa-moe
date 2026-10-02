@@ -63,28 +63,10 @@ The experiments are designed to run on an HPC cluster using SLURM. Each launch s
 
 The launch scripts are provided as templates containing the SLURM configuration and the arguments passed to the Python scripts. Before submitting a job, complete and adapt the corresponding `launch_*.sh` to your cluster (account, partition, paths, etc.).
 
-Two sets of experiments are supported:
-
-1. **Fine-tuning and evaluation**: fine-tune a pretrained model, then evaluate it.
-
-```bash
-   sbatch launch_finetune.sh
-   sbatch launch_evaluation.sh
-```
-
-2. **Pre-training, fine-tuning and evaluation**: run JEPA pre-training first, then fine-tune the resulting model and evaluate it.
-
-```bash
-   sbatch launch_pretrain.sh
-   sbatch launch_finetune.sh
-   sbatch launch_evaluation.sh
-```
-
-Each step depends on the output of the previous one, so submit a job only after the preceding one has completed (or chain them with `sbatch --dependency=afterok:<JOBID>`). Make sure the paths in each launch script point to the outputs of the previous step.
 
 ## Citation
 
-If you use this code, please cite the original LLM-JEPA work:
+If you use this repository, please cite the original LLM-JEPA work:
 
 ```bibtex
 @misc{huang2025llmjepalargelanguagemodels,
