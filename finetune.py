@@ -1,8 +1,3 @@
-"""LLM-JEPA v2.0. checkpoint attivo, fsdp_debug attivo, track_flops solo 1 step, activation checkpoint per fsdp ancora no (DA TESTARE su più nodi magari), device_map=None 
-Extra from v1.0 (presi da v1.2): salvataggio finale tramite checkpoint e non fuori dal trainer. (tiene 6 checkpoint)
-Note: v1.2 NON implica upgrade di v1.1!
-"""
-
 import copy
 import math
 import os
